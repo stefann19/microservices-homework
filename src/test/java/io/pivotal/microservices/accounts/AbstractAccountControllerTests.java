@@ -3,6 +3,8 @@ package io.pivotal.microservices.accounts;
 import java.util.List;
 import java.util.logging.Logger;
 
+import io.pivotal.microservices.DTOs.Account;
+import io.pivotal.microservices.services.accounts.Controllers.AccountsController;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +25,7 @@ public abstract class AbstractAccountControllerTests {
 	protected static final String ACCOUNT_1_NAME = "Keri Lee";
 
 	@Autowired
-	AccountsController accountController;
+    AccountsController accountController;
 
 	@Test
 	public void validAccountNumber() {

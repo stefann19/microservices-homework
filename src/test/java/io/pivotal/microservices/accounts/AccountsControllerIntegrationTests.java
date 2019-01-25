@@ -1,5 +1,6 @@
 package io.pivotal.microservices.accounts;
 
+import io.pivotal.microservices.services.accounts.AccountsConfiguration;
 import org.junit.runner.RunWith;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;

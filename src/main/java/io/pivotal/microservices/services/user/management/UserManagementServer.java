@@ -1,5 +1,4 @@
-package io.pivotal.microservices.services.accounts;
-
+package io.pivotal.microservices.services.user.management;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,34 +13,34 @@ import io.pivotal.microservices.services.accounts.Repositories.AccountRepository
  * Run as a micro-service, registering with the Discovery Server (Eureka).
  * <p>
  * Note that the configuration for this application is imported from
- * {@link AccountsConfiguration}. This is a deliberate separation of concerns.
+ * {@link UserConfiguration}. This is a deliberate separation of concerns.
  * <p>
  * This class declares no beans and current package contains no components for
  * ComponentScan to find. No point using <tt>@SptingBootApplication</tt>.
- * 
+ *
  * @author Paul Chapman
  */
 @EnableAutoConfiguration
 @EnableDiscoveryClient
-@Import(AccountsConfiguration.class)
-public class AccountsServer {
+@Import(UserConfiguration.class)
+public class UserManagementServer {
 
-	@Autowired
-	protected AccountRepository accountRepository;
+  /*  @Autowired
+    protected AccountRepository billRepository;*/
 
-	protected Logger logger = Logger.getLogger(AccountsServer.class.getName());
+    protected Logger logger = Logger.getLogger(UserManagementServer.class.getName());
 
-	/**
-	 * Run the application using Spring Boot and an embedded servlet engine.
-	 * 
-	 * @param args
-	 *            Program arguments - ignored.
-	 */
-	public static void main(String[] args) {
-		// Tell server to look for accounts-server.properties or
-		// accounts-server.yml
-		System.setProperty("spring.config.name", "accounts-server");
+    /**
+     * Run the application using Spring Boot and an embedded servlet engine.
+     *
+     * @param args
+     *            Program arguments - ignored.
+     */
+    public static void main(String[] args) {
+        // Tell server to look for accounts-server.properties or
+        // accounts-server.yml
+        System.setProperty("spring.config.name", "user.management-server");
 
-		SpringApplication.run(AccountsServer.class, args);
-	}
+        SpringApplication.run(UserManagementServer.class, args);
+    }
 }

@@ -1,8 +1,9 @@
-package io.pivotal.microservices.services.web;
+package io.pivotal.microservices.services.web.Views;
 
 import java.math.BigDecimal;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
+import io.pivotal.microservices.services.web.Services.WebAccountsService;
 
 /**
  * Account DTO - used to interact with the {@link WebAccountsService}.

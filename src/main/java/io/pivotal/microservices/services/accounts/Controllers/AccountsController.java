@@ -1,8 +1,10 @@
-package io.pivotal.microservices.accounts;
+package io.pivotal.microservices.services.accounts.Controllers;
 
 import java.util.List;
 import java.util.logging.Logger;
 
+import io.pivotal.microservices.DTOs.Account;
+import io.pivotal.microservices.services.accounts.Repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,6 +52,7 @@ public class AccountsController {
 
 		logger.info("accounts-service byNumber() invoked: " + accountNumber);
 		Account account = accountRepository.findByNumber(accountNumber);
+
 		logger.info("accounts-service byNumber() found: " + account);
 
 		if (account == null)

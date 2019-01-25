@@ -2,11 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="header :: copy"></head>
+<head th:replace="header :: copy">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
 
 <body>
 
-	<h1>Microservices Demo - Web Server</h1>
+	<!--<h1>Microservices Demo - Web Server</h1>
 	<h3>Overview</h3>
 	<ul>
 		<li>Demo defines a simple web-application for accessing accounts
@@ -22,7 +28,7 @@
 			href="http://localhost:1111">http://localhost:1111</a></li>
 		<li>Check applications registered: <a
 			href="http://localhost:1111/eureka/apps/">http://localhost:1111/eureka/apps/</a></li>
-		<li>Fetch account #123456789: <a th:href="@{/accounts/123456789}">/accounts/123456789</a></li>
+		<li>Fetch bill #1: <a th:href="@{/bills/1}">/bills/1</a></li>
 
 		<li>Fetch by name: <a th:href="@{/accounts/owner/Keri}">/accounts/owner/Keri</a></li>
 
@@ -44,7 +50,7 @@
 		     <a th:href="@{/actuator/metrics/http.server.requests}">/actuator/metrics/http.server.requests</a></li>
 		<li><a th:href="@{/actuator}">List of actuator endpoints</a></li>
 	</ul>
-
+-->
 	<div th:replace="footer :: copy"></div>
 
 </body>

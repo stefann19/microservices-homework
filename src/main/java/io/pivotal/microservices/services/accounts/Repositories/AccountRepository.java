@@ -1,7 +1,9 @@
-package io.pivotal.microservices.accounts;
+package io.pivotal.microservices.services.accounts.Repositories;
 
 import java.util.List;
 
+import io.pivotal.microservices.DTOs.Account;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 
@@ -28,6 +30,7 @@ public interface AccountRepository extends Repository<Account, Long> {
 	 *         empty.
 	 */
 	public List<Account> findByOwnerContainingIgnoreCase(String partialName);
+
 
 	/**
 	 * Fetch the number of accounts known to the system.

@@ -1,4 +1,4 @@
-package io.pivotal.microservices.services.web;
+package io.pivotal.microservices.services.web.Views;
 
 import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;

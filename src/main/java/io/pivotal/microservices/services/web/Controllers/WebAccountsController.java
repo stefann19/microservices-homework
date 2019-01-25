@@ -1,10 +1,12 @@
-package io.pivotal.microservices.services.web;
+package io.pivotal.microservices.services.web.Controllers;
 
-import io.pivotal.microservices.services.web.Account;
+import io.pivotal.microservices.services.web.Views.Account;
 
 import java.util.List;
 import java.util.logging.Logger;
 
+import io.pivotal.microservices.services.web.Views.SearchCriteria;
+import io.pivotal.microservices.services.web.Services.WebAccountsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

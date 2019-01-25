@@ -3,6 +3,9 @@ package io.pivotal.microservices.accounts;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.pivotal.microservices.DTOs.Account;
+import io.pivotal.microservices.services.accounts.Controllers.AccountsController;
+import io.pivotal.microservices.services.accounts.Repositories.AccountRepository;
 import org.junit.Before;
 
 public class AccountsControllerTests extends AbstractAccountControllerTests {
