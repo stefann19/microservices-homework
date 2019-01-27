@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Logger;
 
 /**
@@ -30,15 +32,16 @@ public class WebProductController {
     }
 
     @RequestMapping("/products/{productId}")
-    public String byNumber(Model model,
+    public String getProductById(Model model,
                            @PathVariable("productId") String productId) {
 
-        logger.info("warehouse-service byNumber() invoked: " + productId);
+        logger.info("warehouse-service getProductById() invoked: " + productId);
 
         ProductEntity productEntity = webProductService.findById(productId);
-        logger.info("warehouse-service byNumber() found: " + productEntity);
+        logger.info("warehouse-service getProductById() found: " + productEntity);
 
         model.addAttribute("product", productEntity);
         return "product";
     }
+
 }

@@ -6,6 +6,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 @Service
@@ -26,9 +27,15 @@ public class WebProductService {
     }
     public ProductEntity findById(String productId) {
 
-        logger.info("findByNumber() invoked: for " + productId);
+        logger.info("findById() invoked: for " + productId);
         return restTemplate.getForObject(serviceUrl + "/products/{number}",
                 ProductEntity.class, productId);
+    }
+    public ProductEntity[] getAllProducts() {
+
+        logger.info("getAllProducts() invoked");
+        return restTemplate.getForObject(serviceUrl + "/getAllProducts",
+                ProductEntity[].class);
     }
 
 }

@@ -92,7 +92,7 @@ public class WebServer {
 
 	@Bean
 	public HomeController homeController() {
-		return new HomeController();
+		return new HomeController(productService());
 	}
 
 	@Bean

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 @RestController
@@ -36,7 +37,7 @@ public class ProductController {
      *
      * @param productId
      *            A numeric, 9 digit account number.
-     * @return The account if found.
+     * @return The product if found.
      * @throws AccountNotFoundException
      *             If the number is not recognised.
      */
@@ -52,6 +53,26 @@ public class ProductController {
             throw new AccountNotFoundException(productId);
         else {
             return productEntity;
+        }
+    }
+    /**
+     * Fetch all the products.
+     *
+     * @return The products if any.
+     * @throws AccountNotFoundException
+     */
+    @RequestMapping("/getAllProducts")
+    public List<ProductEntity> getAllProducts() {
+
+        logger.info("warehouse-service getAllProducts() invoked: ");
+        List<ProductEntity> productEntities = productRepository.getAllProductEntities();
+
+        logger.info("warehouse-service getAllProducts() invoked: ");
+
+        if (productEntities == null)
+            throw new AccountNotFoundException("products :)");
+        else {
+            return productEntities;
         }
     }
 }
